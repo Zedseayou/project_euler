@@ -462,6 +462,24 @@ Find the maximum total from top to bottom of the triangle below:
 
 NOTE: As there are only 16384 routes, it is possible to solve this problem by trying every route. However, Problem 67, is the same challenge with a triangle containing one-hundred rows; it cannot be solved by brute force, and requires a clever method! ;o)
 ```{r}
+t <- list(
+  75,
+  c(95, 64),
+  c(17, 77, 72),
+  c(18, 85, 57, 70),
+  c(20, 04, 42, 27, 75),
+  c(19, 91, 13, 35, 53, 34),
+  c(88, 82, 27, 73, 37, 73, 37),
+  c(99, 95, 54, 48, 86, 66, 60, 02),
+  c(41, 11, 16, 66, 63, 30, 00, 00, 03),
+  c(41, 18, 82, 23, 37, 72, 27, 76, 64, 49),
+  c(53, 31, 14, 45, 55, 53, 31, 12, 27, 71, 14),
+  c(70, 01, 13, 38, 87, 73, 37, 78, 89, 98, 87, 77),
+  c(91, 11, 12, 28, 87, 74, 41, 13, 38, 80, 07, 79, 98),
+  c(63, 36, 64, 48, 89, 93, 37, 70, 03, 36, 69, 97, 70, 01),
+  c(04, 42, 28, 87, 73, 39, 90, 08, 83, 33, 38, 83, 30, 04, 43)
+)
+
 
 ```
 
