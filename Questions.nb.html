@@ -191,9 +191,9 @@ library(here)</code></pre>
 <p>Find the sum of all the multiples of 3 or 5 below 1000.</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucTFfbnVtIDwtIDE6OTk5XG53aGljaChxMV9udW0gJSUgMyA9PSAwIHwgcTFfbnVtICUlIDUgPT0gMCkgJT4lIHN1bSgpXG5gYGAifQ== -->
-<pre class="r"><code>q1_num &lt;- 1:999
-which(q1_num %% 3 == 0 | q1_num %% 5 == 0) %&gt;% sum()</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxucTFfbnVtIDwtIDE6OTk5XG53aGljaChxMV9udW0gJSUgMyA9PSAwIHwgcTFfbnVtICUlIDUgPT0gMCkgJT4lIHN1bSgpXG5gYGBcbmBgYCJ9 -->
+<p><code>r</code>r q1_num &lt;- 1:999 which(q1_num %% 3 == 0 | q1_num %% 5 == 0) %&gt;% sum()</p>
+<pre><code></code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-output-begin eyJkYXRhIjoiWzFdIDIzMzE2OFxuIn0= -->
 <pre><code>[1] 233168</code></pre>
@@ -208,12 +208,9 @@ which(q1_num %% 3 == 0 | q1_num %% 5 == 0) %&gt;% sum()</code></pre>
 <p>By considering the terms in the Fibonacci sequence whose values do not exceed four million, find the sum of the even-valued terms.</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucTJfZmliIDwtIGMoMSwyKVxud2hpbGUocTJfZmliW2xlbmd0aChxMl9maWIpXSA8IDQwMDAwMDApe1xuICBxMl9maWJbbGVuZ3RoKHEyX2ZpYikgKyAxXSA8LSBxMl9maWJbbGVuZ3RoKHEyX2ZpYikgLSAxXSArIHEyX2ZpYltsZW5ndGgocTJfZmliKV1cbn1cbnEyX2ZpYlt3aGljaChxMl9maWIgJSUgMiA9PSAwKV0gJT4lIHN1bSgpXG5gYGAifQ== -->
-<pre class="r"><code>q2_fib &lt;- c(1,2)
-while(q2_fib[length(q2_fib)] &lt; 4000000){
-  q2_fib[length(q2_fib) + 1] &lt;- q2_fib[length(q2_fib) - 1] + q2_fib[length(q2_fib)]
-}
-q2_fib[which(q2_fib %% 2 == 0)] %&gt;% sum()</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxucTJfZmliIDwtIGMoMSwyKVxud2hpbGUocTJfZmliW2xlbmd0aChxMl9maWIpXSA8IDQwMDAwMDApe1xuICBxMl9maWJbbGVuZ3RoKHEyX2ZpYikgKyAxXSA8LSBxMl9maWJbbGVuZ3RoKHEyX2ZpYikgLSAxXSArIHEyX2ZpYltsZW5ndGgocTJfZmliKV1cbn1cbnEyX2ZpYlt3aGljaChxMl9maWIgJSUgMiA9PSAwKV0gJT4lIHN1bSgpXG5gYGBcbmBgYCJ9 -->
+<p><code>r</code>r q2_fib &lt;- c(1,2) while(q2_fib[length(q2_fib)] &lt; 4000000){ q2_fib[length(q2_fib) + 1] &lt;- q2_fib[length(q2_fib) - 1] + q2_fib[length(q2_fib)] } q2_fib[which(q2_fib %% 2 == 0)] %&gt;% sum()</p>
+<pre><code></code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
@@ -224,19 +221,9 @@ q2_fib[which(q2_fib %% 2 == 0)] %&gt;% sum()</code></pre>
 <p>What is the largest prime factor of the number 600851475143?</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBxM19scGYgPC0gZnVuY3Rpb24obnVtYmVyKXtcbiMgICB0ZXN0X3ByaW1lIDwtIDJcbiMgICB3aGlsZSh0ZXN0X3ByaW1lIDwgc3FydChudW1iZXIpKXtcbiMgICAgIGlmIChudW1iZXIgJSUgdGVzdF9wcmltZSA9PSAwKXtcbiMgICAgICAgbHBmIDwtIHRlc3RfcHJpbWVcbiMgICAgIH1cbiMgICAgIHRlc3RfcHJpbWUgPC0gbnVtYmVyczo6bmV4dFByaW1lKHRlc3RfcHJpbWUpXG4jICAgfVxuIyAgIHJldHVybihscGYpXG4jIH1cbiMgcTNfbHBmKDYwMDg1MTQ3NTE0Mylcbm1heChudW1iZXJzOjpwcmltZUZhY3RvcnMoNjAwODUxNDc1MTQzKSlcbmBgYCJ9 -->
-<pre class="r"><code># q3_lpf &lt;- function(number){
-#   test_prime &lt;- 2
-#   while(test_prime &lt; sqrt(number)){
-#     if (number %% test_prime == 0){
-#       lpf &lt;- test_prime
-#     }
-#     test_prime &lt;- numbers::nextPrime(test_prime)
-#   }
-#   return(lpf)
-# }
-# q3_lpf(600851475143)
-max(numbers::primeFactors(600851475143))</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxuIyBxM19scGYgPC0gZnVuY3Rpb24obnVtYmVyKXtcbiMgICB0ZXN0X3ByaW1lIDwtIDJcbiMgICB3aGlsZSh0ZXN0X3ByaW1lIDwgc3FydChudW1iZXIpKXtcbiMgICAgIGlmIChudW1iZXIgJSUgdGVzdF9wcmltZSA9PSAwKXtcbiMgICAgICAgbHBmIDwtIHRlc3RfcHJpbWVcbiMgICAgIH1cbiMgICAgIHRlc3RfcHJpbWUgPC0gbnVtYmVyczo6bmV4dFByaW1lKHRlc3RfcHJpbWUpXG4jICAgfVxuIyAgIHJldHVybihscGYpXG4jIH1cbiMgcTNfbHBmKDYwMDg1MTQ3NTE0Mylcbm1heChudW1iZXJzOjpwcmltZUZhY3RvcnMoNjAwODUxNDc1MTQzKSlcbmBgYFxuYGBgIn0= -->
+<p><code>r</code>r # q3_lpf &lt;- function(number){ # test_prime &lt;- 2 # while(test_prime &lt; sqrt(number)){ # if (number %% test_prime == 0){ # lpf &lt;- test_prime # } # test_prime &lt;- numbers::nextPrime(test_prime) # } # return(lpf) # } # q3_lpf(600851475143) max(numbers::primeFactors(600851475143))</p>
+<pre><code></code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-output-begin eyJkYXRhIjoiWzFdIDY4NTdcbiJ9 -->
 <pre><code>[1] 6857</code></pre>
@@ -250,7 +237,7 @@ max(numbers::primeFactors(600851475143))</code></pre>
 <p>Find the largest palindrome made from the product of two 3-digit numbers.</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucTRfaXNfcGFsaW5kcm9tZSA8LSBmdW5jdGlvbihuKXtcbiAgbGV0dGVycyA8LSBzdHJfc3BsaXQoYXMuY2hhcmFjdGVyKG4pLCBcIlwiKVtbMV1dXG4gIGlkZW50aWNhbChsZXR0ZXJzLCByZXYobGV0dGVycykpXG59XG5xNF9wYWxpbmRyb21lcyA8LSBudW1lcmljKClcbmZvciAoaSBpbiAxMDA6OTk5KXtcbiAgZm9yIChqIGluIDEwMDo5OTkpe1xuICAgIGlmICgocTRfaXNfcGFsaW5kcm9tZShpICogaikgPT0gVFJVRSkgJiAhKGkgKiBqICAlaW4lIHE0X3BhbGluZHJvbWVzKSl7XG4gICAgICBxNF9wYWxpbmRyb21lc1tsZW5ndGgocTRfcGFsaW5kcm9tZXMpICsgMV0gPC0gaSAqIGpcbiAgICB9XG4gIH1cbn1cbm1heChxNF9wYWxpbmRyb21lcylcbmBgYCJ9 -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucTRfaXNfcGFsaW5kcm9tZSA8LSBmdW5jdGlvbihuKXtcbiAgbGV0dGVycyA8LSBzdHJfc3BsaXQoYXMuY2hhcmFjdGVyKG4pLCBcIlwiKVtbMV1dXG4gIGlkZW50aWNhbChsZXR0ZXJzLCByZXYobGV0dGVycykpXG59XG5xNF9wYWxpbmRyb21lcyA8LSBudW1lcmljKClcbmZvciAoaSBpbiAxMDA6OTk5KXtcbiAgZm9yIChqIGluIDEwMDo5OTkpe1xuICAgIGlmICgocTRfaXNfcGFsaW5kcm9tZShpICogaikgPT0gVFJVRSkgJiAhKGkgKiBqICAlaW4lIHE0X3BhbGluZHJvbWVzKSl7XG4gICAgICBxNF9wYWxpbmRyb21lc1tsZW5ndGgocTRfcGFsaW5kcm9tZXMpICsgMV0gPC0gaSAqIGpcbiAgICB9XG4gIH1cbn1cbmBgYCJ9 -->
 <pre class="r"><code>q4_is_palindrome &lt;- function(n){
   letters &lt;- str_split(as.character(n), &quot;&quot;)[[1]]
   identical(letters, rev(letters))
@@ -262,8 +249,7 @@ for (i in 100:999){
       q4_palindromes[length(q4_palindromes) + 1] &lt;- i * j
     }
   }
-}
-max(q4_palindromes)</code></pre>
+}</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
@@ -274,23 +260,9 @@ max(q4_palindromes)</code></pre>
 <p>What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBxNV9sY20gPC0gMSAqIDIgKiAzICogMiAqIDUgKiA3ICogMiAqIDMgKiAxMSAqIDEzICogMiAqIDE3ICogMTlcbnE1X2xjbSA8LSBmdW5jdGlvbihuKXtcbiAgbGNtIDwtIDFcbiAgZm9yIChqIGluIDE6bil7ICMgdGVzdCBpZiBjdXJyZW50IGxjbSBkaXZpZGVzIGVhY2ggbnVtYmVyXG4gICAgaWYgKGxjbSAlJSBqID4gMCl7ICMgaWYgaXQgZG9lc24ndCBkaXZpZGUgYSBudW1iZXJcbiAgICAgIGZvciAoayBpbiAxOm4peyAjIHRyeSBtdWx0aXBseWluZyB0aGUgY3VycmVudCBsY20gYnkgZWFjaCBudW1iZXJcbiAgICAgICAgaWYgKChsY20gKiBrKSAlJSBqID09IDApeyAjIGlmIGl0IG5vdyBkaXZpZGVzIHRoZSBvbmUgdGhhdCBkaWRuJ3QgZGl2aWRlXG4gICAgICAgICAgbGNtIDwtIGxjbSAqIGsgIyB1cGRhdGUgdGhlIGxjbSB3aXRoIHRoZSBuZXcgbXVsdGlwbGVcbiAgICAgICAgICBicmVha1xuICAgICAgICB9XG4gICAgICB9XG4gICAgfVxuICB9XG4gIHJldHVybihsY20pXG59XG5xNV9sY20oMjApXG5gYGAifQ== -->
-<pre class="r"><code># q5_lcm &lt;- 1 * 2 * 3 * 2 * 5 * 7 * 2 * 3 * 11 * 13 * 2 * 17 * 19
-q5_lcm &lt;- function(n){
-  lcm &lt;- 1
-  for (j in 1:n){ # test if current lcm divides each number
-    if (lcm %% j &gt; 0){ # if it doesn't divide a number
-      for (k in 1:n){ # try multiplying the current lcm by each number
-        if ((lcm * k) %% j == 0){ # if it now divides the one that didn't divide
-          lcm &lt;- lcm * k # update the lcm with the new multiple
-          break
-        }
-      }
-    }
-  }
-  return(lcm)
-}
-q5_lcm(20)</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxuIyBxNV9sY20gPC0gMSAqIDIgKiAzICogMiAqIDUgKiA3ICogMiAqIDMgKiAxMSAqIDEzICogMiAqIDE3ICogMTlcbnE1X2xjbSA8LSBmdW5jdGlvbihuKXtcbiAgbGNtIDwtIDFcbiAgZm9yIChqIGluIDE6bil7ICMgdGVzdCBpZiBjdXJyZW50IGxjbSBkaXZpZGVzIGVhY2ggbnVtYmVyXG4gICAgaWYgKGxjbSAlJSBqID4gMCl7ICMgaWYgaXQgZG9lc24ndCBkaXZpZGUgYSBudW1iZXJcbiAgICAgIGZvciAoayBpbiAxOm4peyAjIHRyeSBtdWx0aXBseWluZyB0aGUgY3VycmVudCBsY20gYnkgZWFjaCBudW1iZXJcbiAgICAgICAgaWYgKChsY20gKiBrKSAlJSBqID09IDApeyAjIGlmIGl0IG5vdyBkaXZpZGVzIHRoZSBvbmUgdGhhdCBkaWRuJ3QgZGl2aWRlXG4gICAgICAgICAgbGNtIDwtIGxjbSAqIGsgIyB1cGRhdGUgdGhlIGxjbSB3aXRoIHRoZSBuZXcgbXVsdGlwbGVcbiAgICAgICAgICBicmVha1xuICAgICAgICB9XG4gICAgICB9XG4gICAgfVxuICB9XG4gIHJldHVybihsY20pXG59XG5xNV9sY20oMjApXG5gYGBcbmBgYCJ9 -->
+<p><code>r</code>r # q5_lcm &lt;- 1 * 2 * 3 * 2 * 5 * 7 * 2 * 3 * 11 * 13 * 2 * 17 * 19 q5_lcm &lt;- function(n){ lcm &lt;- 1 for (j in 1:n){ # test if current lcm divides each number if (lcm %% j &gt; 0){ # if it doesn’t divide a number for (k in 1:n){ # try multiplying the current lcm by each number if ((lcm * k) %% j == 0){ # if it now divides the one that didn’t divide lcm &lt;- lcm * k # update the lcm with the new multiple break } } } } return(lcm) } q5_lcm(20)</p>
+<pre><code></code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
@@ -303,13 +275,9 @@ q5_lcm(20)</code></pre>
 <p>Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum.</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucTZfc3NkIDwtIGZ1bmN0aW9uKG4pe1xuICBzdW1fc3EgPC0gc3VtKCgxOm4pXjIpXG4gIHNxX3N1bSA8LSBzdW0oMTpuKV4yXG4gIHNxX3N1bSAtIHN1bV9zcVxufVxucTZfc3NkKDEwMClcbmBgYCJ9 -->
-<pre class="r"><code>q6_ssd &lt;- function(n){
-  sum_sq &lt;- sum((1:n)^2)
-  sq_sum &lt;- sum(1:n)^2
-  sq_sum - sum_sq
-}
-q6_ssd(100)</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxucTZfc3NkIDwtIGZ1bmN0aW9uKG4pe1xuICBzdW1fc3EgPC0gc3VtKCgxOm4pXjIpXG4gIHNxX3N1bSA8LSBzdW0oMTpuKV4yXG4gIHNxX3N1bSAtIHN1bV9zcVxufVxucTZfc3NkKDEwMClcbmBgYFxuYGBgIn0= -->
+<p><code>r</code>r q6_ssd &lt;- function(n){ sum_sq &lt;- sum((1:n)^2) sq_sum &lt;- sum(1:n)^2 sq_sum - sum_sq } q6_ssd(100)</p>
+<pre><code></code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-output-begin eyJkYXRhIjoiWzFdIDI1MTY0MTUwXG4ifQ== -->
 <pre><code>[1] 25164150</code></pre>
@@ -323,8 +291,9 @@ q6_ssd(100)</code></pre>
 <p>What is the 10001st prime number?</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubnVtYmVyczo6UHJpbWVzKDEwMDAwMDApWzEwMDAxXVxuYGBgIn0= -->
-<pre class="r"><code>numbers::Primes(1000000)[10001]</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxubnVtYmVyczo6UHJpbWVzKDEwMDAwMDApWzEwMDAxXVxuYGBgXG5gYGAifQ== -->
+<p><code>r</code>r numbers::Primes(1000000)[10001]</p>
+<pre><code></code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-output-begin eyJkYXRhIjoiWzFdIDEwNDc0M1xuIn0= -->
 <pre><code>[1] 104743</code></pre>
@@ -339,18 +308,10 @@ q6_ssd(100)</code></pre>
 <p>Find the thirteen adjacent digits in the 1000-digit number that have the greatest product. What is the value of this product?</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucThfbnVtIDwtIFwiNzMxNjcxNzY1MzEzMzA2MjQ5MTkyMjUxMTk2NzQ0MjY1NzQ3NDIzNTUzNDkxOTQ5MzQ5Njk4MzUyMDMxMjc3NDUwNjMyNjIzOTU3ODMxODAxNjk4NDgwMTg2OTQ3ODg1MTg0Mzg1ODYxNTYwNzg5MTEyOTQ5NDk1NDU5NTAxNzM3OTU4MzMxOTUyODUzMjA4ODA1NTExMTI1NDA2OTg3NDcxNTg1MjM4NjMwNTA3MTU2OTMyOTA5NjMyOTUyMjc0NDMwNDM1NTc2Njg5NjY0ODk1MDQ0NTI0NDUyMzE2MTczMTg1NjQwMzA5ODcxMTEyMTcyMjM4MzExMzYyMjI5ODkzNDIzMzgwMzA4MTM1MzM2Mjc2NjE0MjgyODA2NDQ0NDg2NjQ1MjM4NzQ5MzAzNTg5MDcyOTYyOTA0OTE1NjA0NDA3NzIzOTA3MTM4MTA1MTU4NTkzMDc5NjA4NjY3MDE3MjQyNzEyMTg4Mzk5ODc5NzkwODc5MjI3NDkyMTkwMTY5OTcyMDg4ODA5Mzc3NjY1NzI3MzMzMDAxMDUzMzY3ODgxMjIwMjM1NDIxODA5NzUxMjU0NTQwNTk0NzUyMjQzNTI1ODQ5MDc3MTE2NzA1NTYwMTM2MDQ4Mzk1ODY0NDY3MDYzMjQ0MTU3MjIxNTUzOTc1MzY5NzgxNzk3Nzg0NjE3NDA2NDk1NTE0OTI5MDg2MjU2OTMyMTk3ODQ2ODYyMjQ4MjgzOTcyMjQxMzc1NjU3MDU2MDU3NDkwMjYxNDA3OTcyOTY4NjUyNDE0NTM1MTAwNDc0ODIxNjYzNzA0ODQ0MDMxOTk4OTAwMDg4OTUyNDM0NTA2NTg1NDEyMjc1ODg2NjY4ODExNjQyNzE3MTQ3OTkyNDQ0MjkyODIzMDg2MzQ2NTY3NDgxMzkxOTEyMzE2MjgyNDU4NjE3ODY2NDU4MzU5MTI0NTY2NTI5NDc2NTQ1NjgyODQ4OTEyODgzMTQyNjA3NjkwMDQyMjQyMTkwMjI2NzEwNTU2MjYzMjExMTExMDkzNzA1NDQyMTc1MDY5NDE2NTg5NjA0MDgwNzE5ODQwMzg1MDk2MjQ1NTQ0NDM2Mjk4MTIzMDk4Nzg3OTkyNzI0NDI4NDkwOTE4ODg0NTgwMTU2MTY2MDk3OTE5MTMzODc1NDk5MjAwNTI0MDYzNjg5OTEyNTYwNzE3NjA2MDU4ODYxMTY0NjcxMDk0MDUwNzc1NDEwMDIyNTY5ODMxNTUyMDAwNTU5MzU3Mjk3MjU3MTYzNjI2OTU2MTg4MjY3MDQyODI1MjQ4MzYwMDgyMzI1NzUzMDQyMDc1Mjk2MzQ1MFwiXG5xOF9scHMgPC0gZnVuY3Rpb24oc3RyaW5nLCBsZW5ndGgpe1xuICBwcm9kdWN0cyA8LSBudW1lcmljKClcbiAgZm9yIChpIGluIDE6KHN0cl9sZW5ndGgoc3RyaW5nKSAtIGxlbmd0aCArIDEpKXtcbiAgICBzdWJzZXQgPC0gc3RyX3N1YihzdHJpbmcsIGksIGkgKyBsZW5ndGggLSAxKVxuICAgIG51bWJlcnMgPC0gc3RyX3NwbGl0KHN1YnNldCwgXCJcIikgJT4lIGV4dHJhY3QyKDEpICU+JSBhcy5pbnRlZ2VyKClcbiAgICBwcm9kdWN0c1tpXSA8LSBwcm9kKG51bWJlcnMpXG4gIH1cbiAgbWF4KHByb2R1Y3RzKVxufVxucThfbHBzKHE4X251bSwgMTMpXG5gYGAifQ== -->
-<pre class="r"><code>q8_num &lt;- &quot;7316717653133062491922511967442657474235534919493496983520312774506326239578318016984801869478851843858615607891129494954595017379583319528532088055111254069874715852386305071569329096329522744304355766896648950445244523161731856403098711121722383113622298934233803081353362766142828064444866452387493035890729629049156044077239071381051585930796086670172427121883998797908792274921901699720888093776657273330010533678812202354218097512545405947522435258490771167055601360483958644670632441572215539753697817977846174064955149290862569321978468622482839722413756570560574902614079729686524145351004748216637048440319989000889524345065854122758866688116427171479924442928230863465674813919123162824586178664583591245665294765456828489128831426076900422421902267105562632111110937054421750694165896040807198403850962455444362981230987879927244284909188845801561660979191338754992005240636899125607176060588611646710940507754100225698315520005593572972571636269561882670428252483600823257530420752963450&quot;
-q8_lps &lt;- function(string, length){
-  products &lt;- numeric()
-  for (i in 1:(str_length(string) - length + 1)){
-    subset &lt;- str_sub(string, i, i + length - 1)
-    numbers &lt;- str_split(subset, &quot;&quot;) %&gt;% extract2(1) %&gt;% as.integer()
-    products[i] &lt;- prod(numbers)
-  }
-  max(products)
-}
-q8_lps(q8_num, 13)</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxucThfbnVtIDwtIFxcNzMxNjcxNzY1MzEzMzA2MjQ5MTkyMjUxMTk2NzQ0MjY1NzQ3NDIzNTUzNDkxOTQ5MzQ5Njk4MzUyMDMxMjc3NDUwNjMyNjIzOTU3ODMxODAxNjk4NDgwMTg2OTQ3ODg1MTg0Mzg1ODYxNTYwNzg5MTEyOTQ5NDk1NDU5NTAxNzM3OTU4MzMxOTUyODUzMjA4ODA1NTExMTI1NDA2OTg3NDcxNTg1MjM4NjMwNTA3MTU2OTMyOTA5NjMyOTUyMjc0NDMwNDM1NTc2Njg5NjY0ODk1MDQ0NTI0NDUyMzE2MTczMTg1NjQwMzA5ODcxMTEyMTcyMjM4MzExMzYyMjI5ODkzNDIzMzgwMzA4MTM1MzM2Mjc2NjE0MjgyODA2NDQ0NDg2NjQ1MjM4NzQ5MzAzNTg5MDcyOTYyOTA0OTE1NjA0NDA3NzIzOTA3MTM4MTA1MTU4NTkzMDc5NjA4NjY3MDE3MjQyNzEyMTg4Mzk5ODc5NzkwODc5MjI3NDkyMTkwMTY5OTcyMDg4ODA5Mzc3NjY1NzI3MzMzMDAxMDUzMzY3ODgxMjIwMjM1NDIxODA5NzUxMjU0NTQwNTk0NzUyMjQzNTI1ODQ5MDc3MTE2NzA1NTYwMTM2MDQ4Mzk1ODY0NDY3MDYzMjQ0MTU3MjIxNTUzOTc1MzY5NzgxNzk3Nzg0NjE3NDA2NDk1NTE0OTI5MDg2MjU2OTMyMTk3ODQ2ODYyMjQ4MjgzOTcyMjQxMzc1NjU3MDU2MDU3NDkwMjYxNDA3OTcyOTY4NjUyNDE0NTM1MTAwNDc0ODIxNjYzNzA0ODQ0MDMxOTk4OTAwMDg4OTUyNDM0NTA2NTg1NDEyMjc1ODg2NjY4ODExNjQyNzE3MTQ3OTkyNDQ0MjkyODIzMDg2MzQ2NTY3NDgxMzkxOTEyMzE2MjgyNDU4NjE3ODY2NDU4MzU5MTI0NTY2NTI5NDc2NTQ1NjgyODQ4OTEyODgzMTQyNjA3NjkwMDQyMjQyMTkwMjI2NzEwNTU2MjYzMjExMTExMDkzNzA1NDQyMTc1MDY5NDE2NTg5NjA0MDgwNzE5ODQwMzg1MDk2MjQ1NTQ0NDM2Mjk4MTIzMDk4Nzg3OTkyNzI0NDI4NDkwOTE4ODg0NTgwMTU2MTY2MDk3OTE5MTMzODc1NDk5MjAwNTI0MDYzNjg5OTEyNTYwNzE3NjA2MDU4ODYxMTY0NjcxMDk0MDUwNzc1NDEwMDIyNTY5ODMxNTUyMDAwNTU5MzU3Mjk3MjU3MTYzNjI2OTU2MTg4MjY3MDQyODI1MjQ4MzYwMDgyMzI1NzUzMDQyMDc1Mjk2MzQ1MFxcXG5xOF9scHMgPC0gZnVuY3Rpb24oc3RyaW5nLCBsZW5ndGgpe1xuICBwcm9kdWN0cyA8LSBudW1lcmljKClcbiAgZm9yIChpIGluIDE6KHN0cl9sZW5ndGgoc3RyaW5nKSAtIGxlbmd0aCArIDEpKXtcbiAgICBzdWJzZXQgPC0gc3RyX3N1YihzdHJpbmcsIGksIGkgKyBsZW5ndGggLSAxKVxuICAgIG51bWJlcnMgPC0gc3RyX3NwbGl0KHN1YnNldCwgXFxcXCkgJT4lIGV4dHJhY3QyKDEpICU+JSBhcy5pbnRlZ2VyKClcbiAgICBwcm9kdWN0c1tpXSA8LSBwcm9kKG51bWJlcnMpXG4gIH1cbiAgbWF4KHByb2R1Y3RzKVxufVxucThfbHBzKHE4X251bSwgMTMpXG5gYGBcbmBgYCJ9 -->
+<p><code>r</code>r q8_num &lt;- 316717653133062491922511967442657474235534919493496983520312774506326239578318016984801869478851843858615607891129494954595017379583319528532088055111254069874715852386305071569329096329522744304355766896648950445244523161731856403098711121722383113622298934233803081353362766142828064444866452387493035890729629049156044077239071381051585930796086670172427121883998797908792274921901699720888093776657273330010533678812202354218097512545405947522435258490771167055601360483958644670632441572215539753697817977846174064955149290862569321978468622482839722413756570560574902614079729686524145351004748216637048440319989000889524345065854122758866688116427171479924442928230863465674813919123162824586178664583591245665294765456828489128831426076900422421902267105562632111110937054421750694165896040807198403850962455444362981230987879927244284909188845801561660979191338754992005240636899125607176060588611646710940507754100225698315520005593572972571636269561882670428252483600823257530420752963450<br />
+q8_lps &lt;- function(string, length){ products &lt;- numeric() for (i in 1:(str_length(string) - length + 1)){ subset &lt;- str_sub(string, i, i + length - 1) numbers &lt;- str_split(subset, \) %&gt;% extract2(1) %&gt;% as.integer() products[i] &lt;- prod(numbers) } max(products) } q8_lps(q8_num, 13)</p>
+<pre><code></code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-output-begin eyJkYXRhIjoiWzFdIDIzNTE0NjI0MDAwXG4ifQ== -->
 <pre><code>[1] 23514624000</code></pre>
@@ -365,17 +326,9 @@ q8_lps(q8_num, 13)</code></pre>
 <p>There exists exactly one Pythagorean triplet for which <span class="math inline">\(a + b + c = 1000\)</span>. Find the product <span class="math inline">\(abc\)</span>.</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucTlfcHl0aGFnIDwtIGZ1bmN0aW9uKHN1bSl7XG4gIGZvciAobSBpbiAxOihzdW0gLyAyKSl7XG4gICAgZm9yIChuIGluIDE6KG0gLSAxKSl7XG4gICAgICBpZiAoKG0gKiAobSArIG4pKSA9PSAoc3VtIC8gMikpe1xuICAgICAgICByZXR1cm4oYyhtIF4gMiAtIG4gXiAyLCAyICogbSAqIG4sIG0gXiAyICsgbiBeIDIpKVxuICAgICAgfVxuICAgIH1cbiAgfVxufVxucTlfcHl0aGFnKDEwMDApICU+JSBwcm9kKClcbmBgYCJ9 -->
-<pre class="r"><code>q9_pythag &lt;- function(sum){
-  for (m in 1:(sum / 2)){
-    for (n in 1:(m - 1)){
-      if ((m * (m + n)) == (sum / 2)){
-        return(c(m ^ 2 - n ^ 2, 2 * m * n, m ^ 2 + n ^ 2))
-      }
-    }
-  }
-}
-q9_pythag(1000) %&gt;% prod()</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxucTlfcHl0aGFnIDwtIGZ1bmN0aW9uKHN1bSl7XG4gIGZvciAobSBpbiAxOihzdW0gLyAyKSl7XG4gICAgZm9yIChuIGluIDE6KG0gLSAxKSl7XG4gICAgICBpZiAoKG0gKiAobSArIG4pKSA9PSAoc3VtIC8gMikpe1xuICAgICAgICByZXR1cm4oYyhtIF4gMiAtIG4gXiAyLCAyICogbSAqIG4sIG0gXiAyICsgbiBeIDIpKVxuICAgICAgfVxuICAgIH1cbiAgfVxufVxucTlfcHl0aGFnKDEwMDApICU+JSBwcm9kKClcbmBgYFxuYGBgIn0= -->
+<p><code>r</code>r q9_pythag &lt;- function(sum){ for (m in 1:(sum / 2)){ for (n in 1:(m - 1)){ if ((m * (m + n)) == (sum / 2)){ return(c(m ^ 2 - n ^ 2, 2 * m * n, m ^ 2 + n ^ 2)) } } } } q9_pythag(1000) %&gt;% prod()</p>
+<pre><code></code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-output-begin eyJkYXRhIjoiWzFdIDMxODc1MDAwXG4ifQ== -->
 <pre><code>[1] 31875000</code></pre>
@@ -389,18 +342,9 @@ q9_pythag(1000) %&gt;% prod()</code></pre>
 <p>Find the sum of all the primes below two million.</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBxMTBfcHN1bSA8LSBmdW5jdGlvbihsaW1pdCl7XG4jICAgc3VtIDwtIDBcbiMgICBjdXJyZW50X3ByaW1lIDwtIDJcbiMgICB3aGlsZSAoY3VycmVudF9wcmltZSA8IGxpbWl0IC0gMSl7XG4jICAgICBzdW0gPC0gc3VtICsgY3VycmVudF9wcmltZVxuIyAgICAgY3VycmVudF9wcmltZSA8LSBudW1iZXJzOjpuZXh0UHJpbWUoY3VycmVudF9wcmltZSlcbiMgICB9XG4jICAgcmV0dXJuKHN1bSlcbiMgfVxuIyBxMTBfcHN1bSgyMDAwMDAwKVxuc3VtKG51bWJlcnM6OlByaW1lcygyMDAwMDAwKSlcbmBgYCJ9 -->
-<pre class="r"><code># q10_psum &lt;- function(limit){
-#   sum &lt;- 0
-#   current_prime &lt;- 2
-#   while (current_prime &lt; limit - 1){
-#     sum &lt;- sum + current_prime
-#     current_prime &lt;- numbers::nextPrime(current_prime)
-#   }
-#   return(sum)
-# }
-# q10_psum(2000000)
-sum(numbers::Primes(2000000))</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxuIyBxMTBfcHN1bSA8LSBmdW5jdGlvbihsaW1pdCl7XG4jICAgc3VtIDwtIDBcbiMgICBjdXJyZW50X3ByaW1lIDwtIDJcbiMgICB3aGlsZSAoY3VycmVudF9wcmltZSA8IGxpbWl0IC0gMSl7XG4jICAgICBzdW0gPC0gc3VtICsgY3VycmVudF9wcmltZVxuIyAgICAgY3VycmVudF9wcmltZSA8LSBudW1iZXJzOjpuZXh0UHJpbWUoY3VycmVudF9wcmltZSlcbiMgICB9XG4jICAgcmV0dXJuKHN1bSlcbiMgfVxuIyBxMTBfcHN1bSgyMDAwMDAwKVxuc3VtKG51bWJlcnM6OlByaW1lcygyMDAwMDAwKSlcbmBgYFxuYGBgIn0= -->
+<p><code>r</code>r # q10_psum &lt;- function(limit){ # sum &lt;- 0 # current_prime &lt;- 2 # while (current_prime &lt; limit - 1){ # sum &lt;- sum + current_prime # current_prime &lt;- numbers::nextPrime(current_prime) # } # return(sum) # } # q10_psum(2000000) sum(numbers::Primes(2000000))</p>
+<pre><code></code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-output-begin eyJkYXRhIjoiWzFdIDE0MjkxMzgyODkyMlxuIn0= -->
 <pre><code>[1] 142913828922</code></pre>
@@ -416,24 +360,9 @@ sum(numbers::Primes(2000000))</code></pre>
 <p>What is the greatest product of four adjacent numbers in the same direction (up, down, left, right, or diagonally) in the 20×20 grid?</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZyA8LSByZWFkX2RlbGltKFxuICBoZXJlKFwicTExLnR4dFwiKSxcbiAgZGVsaW0gPSBcIiBcIixcbiAgY29sX25hbWVzID0gRkFMU0UsXG4gIGNvbF90eXBlcyA9IFwiaWlpaWlpaWlpaWlpaWlpaWlpaWlcIilcbnAgPC0gbnVtZXJpYygwKVxuZm9yIChtIGluIDE6MTcpe1xuICBmb3IgKG4gaW4gMToxNyl7XG4gICAgcFtsZW5ndGgocCkgKyAxXSA8LSBwcm9kKGdbbSwgbl0sIGdbbSArIDEsIG5dLCBnW20gKyAyLCBuXSwgZ1ttICsgMywgbl0pXG4gICAgcFtsZW5ndGgocCkgKyAxXSA8LSBwcm9kKGdbbSwgbl0sIGdbbSwgbiArIDFdLCBnW20sIG4gKyAyXSwgZ1ttLCBuICsgM10pXG4gICAgcFtsZW5ndGgocCkgKyAxXSA8LSBwcm9kKGdbbSwgbl0sIGdbbSArIDEsIG4gKyAxXSwgZ1ttICsgMiwgbiArIDJdLCBnW20gKyAzLCBuICsgM10pXG4gIH1cbiAgZm9yIChuIGluIDQ6MjApe1xuICAgIHBbbGVuZ3RoKHApICsgMV0gPC0gcHJvZChnW20sIG5dLCBnW20gKyAxLCBuIC0gMV0sIGdbbSArIDIsIG4gLSAyXSwgZ1ttICsgMywgbiAtIDNdKVxuICB9XG59XG5tYXgocClcbmBgYCJ9 -->
-<pre class="r"><code>g &lt;- read_delim(
-  here(&quot;q11.txt&quot;),
-  delim = &quot; &quot;,
-  col_names = FALSE,
-  col_types = &quot;iiiiiiiiiiiiiiiiiiii&quot;)
-p &lt;- numeric(0)
-for (m in 1:17){
-  for (n in 1:17){
-    p[length(p) + 1] &lt;- prod(g[m, n], g[m + 1, n], g[m + 2, n], g[m + 3, n])
-    p[length(p) + 1] &lt;- prod(g[m, n], g[m, n + 1], g[m, n + 2], g[m, n + 3])
-    p[length(p) + 1] &lt;- prod(g[m, n], g[m + 1, n + 1], g[m + 2, n + 2], g[m + 3, n + 3])
-  }
-  for (n in 4:20){
-    p[length(p) + 1] &lt;- prod(g[m, n], g[m + 1, n - 1], g[m + 2, n - 2], g[m + 3, n - 3])
-  }
-}
-max(p)</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxuZyA8LSByZWFkX2RlbGltKFxuICBoZXJlKFxccTExLnR4dFxcKSxcbiAgZGVsaW0gPSBcXCBcXCxcbiAgY29sX25hbWVzID0gRkFMU0UsXG4gIGNvbF90eXBlcyA9IFxcaWlpaWlpaWlpaWlpaWlpaWlpaWlcXClcbnAgPC0gbnVtZXJpYygwKVxuZm9yIChtIGluIDE6MTcpe1xuICBmb3IgKG4gaW4gMToxNyl7XG4gICAgcFtsZW5ndGgocCkgKyAxXSA8LSBwcm9kKGdbbSwgbl0sIGdbbSArIDEsIG5dLCBnW20gKyAyLCBuXSwgZ1ttICsgMywgbl0pXG4gICAgcFtsZW5ndGgocCkgKyAxXSA8LSBwcm9kKGdbbSwgbl0sIGdbbSwgbiArIDFdLCBnW20sIG4gKyAyXSwgZ1ttLCBuICsgM10pXG4gICAgcFtsZW5ndGgocCkgKyAxXSA8LSBwcm9kKGdbbSwgbl0sIGdbbSArIDEsIG4gKyAxXSwgZ1ttICsgMiwgbiArIDJdLCBnW20gKyAzLCBuICsgM10pXG4gIH1cbiAgZm9yIChuIGluIDQ6MjApe1xuICAgIHBbbGVuZ3RoKHApICsgMV0gPC0gcHJvZChnW20sIG5dLCBnW20gKyAxLCBuIC0gMV0sIGdbbSArIDIsIG4gLSAyXSwgZ1ttICsgMywgbiAtIDNdKVxuICB9XG59XG5tYXgocClcbmBgYFxuYGBgIn0= -->
+<p><code>r</code>r g &lt;- read_delim( here(11.txt), delim =  , col_names = FALSE, col_types = ) p &lt;- numeric(0) for (m in 1:17){ for (n in 1:17){ p[length(p) + 1] &lt;- prod(g[m, n], g[m + 1, n], g[m + 2, n], g[m + 3, n]) p[length(p) + 1] &lt;- prod(g[m, n], g[m, n + 1], g[m, n + 2], g[m, n + 3]) p[length(p) + 1] &lt;- prod(g[m, n], g[m + 1, n + 1], g[m + 2, n + 2], g[m + 3, n + 3]) } for (n in 4:20){ p[length(p) + 1] &lt;- prod(g[m, n], g[m + 1, n - 1], g[m + 2, n - 2], g[m + 3, n - 3]) } } max(p)</p>
+<pre><code></code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-output-begin eyJkYXRhIjoiWzFdIDcwNjAwNjc0XG4ifQ== -->
 <pre><code>[1] 70600674</code></pre>
@@ -457,19 +386,9 @@ max(p)</code></pre>
 <p>What is the value of the first triangle number to have over five hundred divisors?</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucTEyX2Rpdl90cmkgPC0gZnVuY3Rpb24obil7XG4gIGkgPC0gMFxuICBkaXZpc29ycyA8LSAwXG4gIHdoaWxlIChkaXZpc29ycyA8IG4pe1xuICAgIGkgPC0gaSArIDFcbiAgICB0cmlhbmdsZSA8LSAoaSAqIChpICsgMSkgLyAyKVxuICAgIHByaW1lX2ZhY3RvcnMgPC0gbnVtYmVyczo6cHJpbWVGYWN0b3JzKHRyaWFuZ2xlKVxuICAgIGRpdmlzb3JzIDwtIHByb2QocmxlKHByaW1lX2ZhY3RvcnMpJGxlbmd0aHMgKyAxKVxuICB9XG4gIHJldHVybih0cmlhbmdsZSlcbn1cbnExMl9kaXZfdHJpKDUwMClcbmBgYCJ9 -->
-<pre class="r"><code>q12_div_tri &lt;- function(n){
-  i &lt;- 0
-  divisors &lt;- 0
-  while (divisors &lt; n){
-    i &lt;- i + 1
-    triangle &lt;- (i * (i + 1) / 2)
-    prime_factors &lt;- numbers::primeFactors(triangle)
-    divisors &lt;- prod(rle(prime_factors)$lengths + 1)
-  }
-  return(triangle)
-}
-q12_div_tri(500)</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxucTEyX2Rpdl90cmkgPC0gZnVuY3Rpb24obil7XG4gIGkgPC0gMFxuICBkaXZpc29ycyA8LSAwXG4gIHdoaWxlIChkaXZpc29ycyA8IG4pe1xuICAgIGkgPC0gaSArIDFcbiAgICB0cmlhbmdsZSA8LSAoaSAqIChpICsgMSkgLyAyKVxuICAgIHByaW1lX2ZhY3RvcnMgPC0gbnVtYmVyczo6cHJpbWVGYWN0b3JzKHRyaWFuZ2xlKVxuICAgIGRpdmlzb3JzIDwtIHByb2QocmxlKHByaW1lX2ZhY3RvcnMpJGxlbmd0aHMgKyAxKVxuICB9XG4gIHJldHVybih0cmlhbmdsZSlcbn1cbnExMl9kaXZfdHJpKDUwMClcbmBgYFxuYGBgIn0= -->
+<p><code>r</code>r q12_div_tri &lt;- function(n){ i &lt;- 0 divisors &lt;- 0 while (divisors &lt; n){ i &lt;- i + 1 triangle &lt;- (i * (i + 1) / 2) prime_factors &lt;- numbers::primeFactors(triangle) divisors &lt;- prod(rle(prime_factors)$lengths + 1) } return(triangle) } q12_div_tri(500)</p>
+<pre><code></code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-output-begin eyJkYXRhIjoiWzFdIDc2NTc2NTAwXG4ifQ== -->
 <pre><code>[1] 76576500</code></pre>
@@ -482,10 +401,9 @@ q12_div_tri(500)</code></pre>
 <p>Work out the first ten digits of the sum of the following one-hundred 50-digit numbers.</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubnVtYmVycyA8LSByZWFkX2xpbmVzKGhlcmUoXCJxMTMudHh0XCIpKVxub3B0aW9ucyhkaWdpdHM9MjIpXG5zdW0oYXMubnVtZXJpYyhudW1iZXJzKSlcbmBgYCJ9 -->
-<pre class="r"><code>numbers &lt;- read_lines(here(&quot;q13.txt&quot;))
-options(digits=22)
-sum(as.numeric(numbers))</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxubnVtYmVycyA8LSByZWFkX2xpbmVzKGhlcmUoXFxxMTMudHh0XFwpKVxub3B0aW9ucyhkaWdpdHM9MjIpXG5zdW0oYXMubnVtZXJpYyhudW1iZXJzKSlcbmBgYFxuYGBgIn0= -->
+<p><code>r</code>r numbers &lt;- read_lines(here(13.txt)) options(digits=22) sum(as.numeric(numbers))</p>
+<pre><code></code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-output-begin eyJkYXRhIjoiWzFdIDUuNTM3Mzc2MjMwMzkwODc2NmUrNTFcbiJ9 -->
 <pre><code>[1] 5.5373762303908766e+51</code></pre>
@@ -503,36 +421,16 @@ sum(as.numeric(numbers))</code></pre>
 <p>NOTE: Once the chain starts the terms are allowed to go above one million.</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucTE0X2NvbGxhdHogPC0gZnVuY3Rpb24obil7XG4gIHN0ZXAgPC0gZnVuY3Rpb24oeCl7XG4gICAgaWYgKHggJSUgMiA9PSAwKSByZXR1cm4oeCAvIDIpXG4gICAgaWYgKHggJSUgMiA9PSAxKSByZXR1cm4oKDMgKiB4KSArIDEpXG4gIH1cbiAgbWF4X3N0YXJ0IDwtIDFcbiAgbWF4X2xlbmd0aCA8LSAwXG4gIGZvciAoaSBpbiAxOm4pe1xuICAgIGxlbmd0aCA8LSAxXG4gICAgc3RhcnQgPC0gaVxuICAgIHdoaWxlKGkgIT0gMSl7XG4gICAgICBsZW5ndGggPC0gbGVuZ3RoICsgMVxuICAgICAgaSA8LSBzdGVwKGkpXG4gICAgfVxuICAgIGlmIChsZW5ndGggPiBtYXhfbGVuZ3RoKXtcbiAgICAgIG1heF9sZW5ndGggPC0gbGVuZ3RoXG4gICAgICBtYXhfc3RhcnQgPC0gc3RhcnRcbiAgICB9XG4gIH1cbiAgcmV0dXJuKGMobWF4X3N0YXJ0LCBtYXhfbGVuZ3RoKSlcbn1cbnRpY3RvYzo6dGljKClcbnExNF9jb2xsYXR6KDEwMDAwMDApXG5gYGAifQ== -->
-<pre class="r"><code>q14_collatz &lt;- function(n){
-  step &lt;- function(x){
-    if (x %% 2 == 0) return(x / 2)
-    if (x %% 2 == 1) return((3 * x) + 1)
-  }
-  max_start &lt;- 1
-  max_length &lt;- 0
-  for (i in 1:n){
-    length &lt;- 1
-    start &lt;- i
-    while(i != 1){
-      length &lt;- length + 1
-      i &lt;- step(i)
-    }
-    if (length &gt; max_length){
-      max_length &lt;- length
-      max_start &lt;- start
-    }
-  }
-  return(c(max_start, max_length))
-}
-tictoc::tic()
-q14_collatz(1000000)</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxucTE0X2NvbGxhdHogPC0gZnVuY3Rpb24obil7XG4gIHN0ZXAgPC0gZnVuY3Rpb24oeCl7XG4gICAgaWYgKHggJSUgMiA9PSAwKSByZXR1cm4oeCAvIDIpXG4gICAgaWYgKHggJSUgMiA9PSAxKSByZXR1cm4oKDMgKiB4KSArIDEpXG4gIH1cbiAgbWF4X3N0YXJ0IDwtIDFcbiAgbWF4X2xlbmd0aCA8LSAwXG4gIGZvciAoaSBpbiAxOm4pe1xuICAgIGxlbmd0aCA8LSAxXG4gICAgc3RhcnQgPC0gaVxuICAgIHdoaWxlKGkgIT0gMSl7XG4gICAgICBsZW5ndGggPC0gbGVuZ3RoICsgMVxuICAgICAgaSA8LSBzdGVwKGkpXG4gICAgfVxuICAgIGlmIChsZW5ndGggPiBtYXhfbGVuZ3RoKXtcbiAgICAgIG1heF9sZW5ndGggPC0gbGVuZ3RoXG4gICAgICBtYXhfc3RhcnQgPC0gc3RhcnRcbiAgICB9XG4gIH1cbiAgcmV0dXJuKGMobWF4X3N0YXJ0LCBtYXhfbGVuZ3RoKSlcbn1cbnRpY3RvYzo6dGljKClcbnExNF9jb2xsYXR6KDEwMDAwMDApXG5gYGBcbmBgYCJ9 -->
+<p><code>r</code>r q14_collatz &lt;- function(n){ step &lt;- function(x){ if (x %% 2 == 0) return(x / 2) if (x %% 2 == 1) return((3 * x) + 1) } max_start &lt;- 1 max_length &lt;- 0 for (i in 1:n){ length &lt;- 1 start &lt;- i while(i != 1){ length &lt;- length + 1 i &lt;- step(i) } if (length &gt; max_length){ max_length &lt;- length max_start &lt;- start } } return(c(max_start, max_length)) } tictoc::tic() q14_collatz(1000000)</p>
+<pre><code></code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-output-begin eyJkYXRhIjoiWzFdIDgzNzc5OSAgICA1MjVcbiJ9 -->
 <pre><code>[1] 837799    525</code></pre>
 <!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudGljdG9jOjp0b2MoKVxuYGBgIn0= -->
-<pre class="r"><code>tictoc::toc()</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxudGljdG9jOjp0b2MoKVxuYGBgXG5gYGAifQ== -->
+<p><code>r</code>r tictoc::toc()</p>
+<pre><code></code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-output-begin eyJkYXRhIjoiNzkuNDcgc2VjIGVsYXBzZWRcbiJ9 -->
 <pre><code>79.47 sec elapsed</code></pre>
@@ -546,8 +444,9 @@ q14_collatz(1000000)</code></pre>
 <p>How many such routes are there through a 20×20 grid?</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2hvb3NlKDIwICsgMjAsIDIwKVxuYGBgIn0= -->
-<pre class="r"><code>choose(20 + 20, 20)</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxuY2hvb3NlKDIwICsgMjAsIDIwKVxuYGBgXG5gYGAifQ== -->
+<p><code>r</code>r choose(20 + 20, 20)</p>
+<pre><code></code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-output-begin eyJkYXRhIjoiWzFdIDEzNzg0NjUyODgyMFxuIn0= -->
 <pre><code>[1] 137846528820</code></pre>
@@ -561,26 +460,9 @@ q14_collatz(1000000)</code></pre>
 <p>What is the sum of the digits of the number <span class="math inline">\(2^{1000}\)</span>?</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucTE2X3BzdW0gPC0gZnVuY3Rpb24oYmFzZSwgaW5kZXgpe1xuICBwb3dlciA8LSBpbnRlZ2VyKDMwOClcbiAgcG93ZXJbMV0gPC0gMVxuICBtdWx0IDwtIGZ1bmN0aW9uKHZlY3RvciwgbXVsdGlwbGllcil7XG4gICAgcHJvZCA8LSB2ZWN0b3IgKiBtdWx0aXBsaWVyXG4gICAgZm9yIChwbGFjZSBpbiAxOmxlbmd0aChwcm9kKSl7XG4gICAgICBpZiAocHJvZFtwbGFjZV0gPiA5KXtcbiAgICAgICAgcHJvZFtwbGFjZSArIDFdIDwtIHByb2RbcGxhY2UgKyAxXSArIChwcm9kW3BsYWNlXSAlLyUgMTApXG4gICAgICAgIHByb2RbcGxhY2VdIDwtIHByb2RbcGxhY2VdICUlIDEwXG4gICAgICB9XG4gICAgfVxuICAgIHJldHVybihwcm9kKVxuICB9XG4gIGZvciAoaSBpbiAxOmluZGV4KXtcbiAgICBwb3dlciA8LSBtdWx0KHBvd2VyLCBiYXNlKVxuICB9XG4gIHN1bShwb3dlcilcbn1cbnExNl9wc3VtKDIsIDEwMDApXG5gYGAifQ== -->
-<pre class="r"><code>q16_psum &lt;- function(base, index){
-  power &lt;- integer(308)
-  power[1] &lt;- 1
-  mult &lt;- function(vector, multiplier){
-    prod &lt;- vector * multiplier
-    for (place in 1:length(prod)){
-      if (prod[place] &gt; 9){
-        prod[place + 1] &lt;- prod[place + 1] + (prod[place] %/% 10)
-        prod[place] &lt;- prod[place] %% 10
-      }
-    }
-    return(prod)
-  }
-  for (i in 1:index){
-    power &lt;- mult(power, base)
-  }
-  sum(power)
-}
-q16_psum(2, 1000)</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxucTE2X3BzdW0gPC0gZnVuY3Rpb24oYmFzZSwgaW5kZXgpe1xuICBwb3dlciA8LSBpbnRlZ2VyKDMwOClcbiAgcG93ZXJbMV0gPC0gMVxuICBtdWx0IDwtIGZ1bmN0aW9uKHZlY3RvciwgbXVsdGlwbGllcil7XG4gICAgcHJvZCA8LSB2ZWN0b3IgKiBtdWx0aXBsaWVyXG4gICAgZm9yIChwbGFjZSBpbiAxOmxlbmd0aChwcm9kKSl7XG4gICAgICBpZiAocHJvZFtwbGFjZV0gPiA5KXtcbiAgICAgICAgcHJvZFtwbGFjZSArIDFdIDwtIHByb2RbcGxhY2UgKyAxXSArIChwcm9kW3BsYWNlXSAlLyUgMTApXG4gICAgICAgIHByb2RbcGxhY2VdIDwtIHByb2RbcGxhY2VdICUlIDEwXG4gICAgICB9XG4gICAgfVxuICAgIHJldHVybihwcm9kKVxuICB9XG4gIGZvciAoaSBpbiAxOmluZGV4KXtcbiAgICBwb3dlciA8LSBtdWx0KHBvd2VyLCBiYXNlKVxuICB9XG4gIHN1bShwb3dlcilcbn1cbnExNl9wc3VtKDIsIDEwMDApXG5gYGBcbmBgYCJ9 -->
+<p><code>r</code>r q16_psum &lt;- function(base, index){ power &lt;- integer(308) power[1] &lt;- 1 mult &lt;- function(vector, multiplier){ prod &lt;- vector * multiplier for (place in 1:length(prod)){ if (prod[place] &gt; 9){ prod[place + 1] &lt;- prod[place + 1] + (prod[place] %/% 10) prod[place] &lt;- prod[place] %% 10 } } return(prod) } for (i in 1:index){ power &lt;- mult(power, base) } sum(power) } q16_psum(2, 1000)</p>
+<pre><code></code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-output-begin eyJkYXRhIjoiWzFdIDEzNjZcbiJ9 -->
 <pre><code>[1] 1366</code></pre>
@@ -595,67 +477,25 @@ q16_psum(2, 1000)</code></pre>
 <p>NOTE: Do not count spaces or hyphens. For example, 342 (three hundred and forty-two) contains 23 letters and 115 (one hundred and fifteen) contains 20 letters. The use of “and” when writing out numbers is in compliance with British usage.</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubnVtYmVyczJ3b3JkcyA8LSBmdW5jdGlvbih4KXtcbiAgICAjIyBGdW5jdGlvbiBieSBKb2huIEZveCBmb3VuZCBoZXJlOiBcbiAgICAjIyBodHRwOi8vdG9sc3RveS5uZXdjYXN0bGUuZWR1LmF1L1IvaGVscC8wNS8wNC8yNzE1Lmh0bWxcbiAgICAjIyBUd2Vha3MgYnkgQUpIIHRvIGFkZCBjb21tYXMgYW5kIFwiYW5kXCJcbiAgICBoZWxwZXIgPC0gZnVuY3Rpb24oeCl7XG4gICAgICBcbiAgICAgIGRpZ2l0cyA8LSByZXYoc3Ryc3BsaXQoYXMuY2hhcmFjdGVyKHgpLCBcIlwiKVtbMV1dKVxuICAgICAgbkRpZ2l0cyA8LSBsZW5ndGgoZGlnaXRzKVxuICAgICAgaWYgKG5EaWdpdHMgPT0gMSkgYXMudmVjdG9yKG9uZXNbZGlnaXRzXSlcbiAgICAgIGVsc2UgaWYgKG5EaWdpdHMgPT0gMilcbiAgICAgICAgaWYgKHggPD0gMTkpIGFzLnZlY3Rvcih0ZWVuc1tkaWdpdHNbMV1dKVxuICAgICAgZWxzZSB0cmltKHBhc3RlKHRlbnNbZGlnaXRzWzJdXSxcbiAgICAgICAgICAgICAgICAgICAgICBSZWNhbGwoYXMubnVtZXJpYyhkaWdpdHNbMV0pKSkpXG4gICAgICBlbHNlIGlmIChuRGlnaXRzID09IDMpIHRyaW0ocGFzdGUob25lc1tkaWdpdHNbM11dLCBcImh1bmRyZWQgYW5kXCIsIFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFJlY2FsbChtYWtlTnVtYmVyKGRpZ2l0c1syOjFdKSkpKVxuICAgICAgZWxzZSB7XG4gICAgICAgIG5TdWZmaXggPC0gKChuRGlnaXRzICsgMikgJS8lIDMpIC0gMVxuICAgICAgICBpZiAoblN1ZmZpeCA+IGxlbmd0aChzdWZmaXhlcykpIHN0b3AocGFzdGUoeCwgXCJpcyB0b28gbGFyZ2UhXCIpKVxuICAgICAgICB0cmltKHBhc3RlKFJlY2FsbChtYWtlTnVtYmVyKGRpZ2l0c1tcbiAgICAgICAgICBuRGlnaXRzOigzKm5TdWZmaXggKyAxKV0pKSxcbiAgICAgICAgICBzdWZmaXhlc1tuU3VmZml4XSxcIixcIiAsXG4gICAgICAgICAgUmVjYWxsKG1ha2VOdW1iZXIoZGlnaXRzWygzKm5TdWZmaXgpOjFdKSkpKVxuICAgICAgfVxuICAgIH1cbiAgICB0cmltIDwtIGZ1bmN0aW9uKHRleHQpe1xuICAgICAgI1RpZHkgbGVhZGluZy90cmFpbGluZyB3aGl0ZXNwYWNlLCBzcGFjZSBiZWZvcmUgY29tbWFcbiAgICAgIHRleHQ9Z3N1YihcIl5cXCBcIiwgXCJcIiwgZ3N1YihcIlxcICokXCIsIFwiXCIsIGdzdWIoXCJcXCAsXCIsXCIsXCIsdGV4dCkpKVxuICAgICAgI0NsZWFyIGFueSB0cmFpbGluZyBcIiBhbmRcIlxuICAgICAgdGV4dD1nc3ViKFwiIGFuZCRcIixcIlwiLHRleHQpXG4gICAgICAjQ2xlYXIgYW55IHRyYWlsaW5nIGNvbW1hXG4gICAgICBnc3ViKFwiXFwgKiwkXCIsXCJcIix0ZXh0KVxuICAgIH0gIFxuICAgIG1ha2VOdW1iZXIgPC0gZnVuY3Rpb24oLi4uKSBhcy5udW1lcmljKHBhc3RlKC4uLiwgY29sbGFwc2U9XCJcIikpICAgICBcbiAgICAjRGlzYWJsZSBzY2llbnRpZmljIG5vdGF0aW9uXG4gICAgb3B0cyA8LSBvcHRpb25zKHNjaXBlbj0xMDApIFxuICAgIG9uLmV4aXQob3B0aW9ucyhvcHRzKSkgXG4gICAgb25lcyA8LSBjKFwiXCIsIFwib25lXCIsIFwidHdvXCIsIFwidGhyZWVcIiwgXCJmb3VyXCIsIFwiZml2ZVwiLCBcInNpeFwiLCBcInNldmVuXCIsXG4gICAgICAgICAgICAgIFwiZWlnaHRcIiwgXCJuaW5lXCIpIFxuICAgIG5hbWVzKG9uZXMpIDwtIDA6OSBcbiAgICB0ZWVucyA8LSBjKFwidGVuXCIsIFwiZWxldmVuXCIsIFwidHdlbHZlXCIsIFwidGhpcnRlZW5cIiwgXCJmb3VydGVlblwiLCBcImZpZnRlZW5cIixcbiAgICAgICAgICAgICAgIFwic2l4dGVlblwiLCBcIiBzZXZlbnRlZW5cIiwgXCJlaWdodGVlblwiLCBcIm5pbmV0ZWVuXCIpXG4gICAgbmFtZXModGVlbnMpIDwtIDA6OSBcbiAgICB0ZW5zIDwtIGMoXCJ0d2VudHlcIiwgXCJ0aGlydHlcIiwgXCJmb3J0eVwiLCBcImZpZnR5XCIsIFwic2l4dHlcIiwgXCJzZXZlbnR5XCIsIFwiZWlnaHR5XCIsXG4gICAgICAgICAgICAgIFwibmluZXR5XCIpIFxuICAgIG5hbWVzKHRlbnMpIDwtIDI6OSBcbiAgICB4IDwtIHJvdW5kKHgpXG4gICAgc3VmZml4ZXMgPC0gYyhcInRob3VzYW5kXCIsIFwibWlsbGlvblwiLCBcImJpbGxpb25cIiwgXCJ0cmlsbGlvblwiKSAgICAgXG4gICAgaWYgKGxlbmd0aCh4KSA+IDEpIHJldHVybih0cmltKHNhcHBseSh4LCBoZWxwZXIpKSlcbiAgICBoZWxwZXIoeClcbn1cbnExN19ubGNfc3VtIDwtIGZ1bmN0aW9uKG4pe1xuICBjb3VudF9sZXR0ZXJzIDwtIGZ1bmN0aW9uKG51bWJlcil7XG4gICAgbnVtX2FzX3dvcmQgPC0gbnVtYmVyczJ3b3JkcyhudW1iZXIpXG4gICAgbGV0dGVycyA8LSBzdHJfcmVwbGFjZV9hbGwobnVtX2FzX3dvcmQsIFwiIHwsXCIsIFwiXCIpXG4gICAgY291bnQgPC0gc3RyX2xlbmd0aChsZXR0ZXJzKVxuICB9XG4gIGxldHRlcl9jb3VudHMgPC0gbWFwX2ludCgxOm4sIGNvdW50X2xldHRlcnMpXG4gIHN1bShsZXR0ZXJfY291bnRzKVxufVxucTE3X25sY19zdW0oMTAwMClcbmBgYCJ9 -->
-<pre class="r"><code>numbers2words &lt;- function(x){
-    ## Function by John Fox found here: 
-    ## http://tolstoy.newcastle.edu.au/R/help/05/04/2715.html
-    ## Tweaks by AJH to add commas and &quot;and&quot;
-    helper &lt;- function(x){
-      
-      digits &lt;- rev(strsplit(as.character(x), &quot;&quot;)[[1]])
-      nDigits &lt;- length(digits)
-      if (nDigits == 1) as.vector(ones[digits])
-      else if (nDigits == 2)
-        if (x &lt;= 19) as.vector(teens[digits[1]])
-      else trim(paste(tens[digits[2]],
-                      Recall(as.numeric(digits[1]))))
-      else if (nDigits == 3) trim(paste(ones[digits[3]], &quot;hundred and&quot;, 
-                                        Recall(makeNumber(digits[2:1]))))
-      else {
-        nSuffix &lt;- ((nDigits + 2) %/% 3) - 1
-        if (nSuffix &gt; length(suffixes)) stop(paste(x, &quot;is too large!&quot;))
-        trim(paste(Recall(makeNumber(digits[
-          nDigits:(3*nSuffix + 1)])),
-          suffixes[nSuffix],&quot;,&quot; ,
-          Recall(makeNumber(digits[(3*nSuffix):1]))))
-      }
-    }
-    trim &lt;- function(text){
-      #Tidy leading/trailing whitespace, space before comma
-      text=gsub(&quot;^\ &quot;, &quot;&quot;, gsub(&quot;\ *$&quot;, &quot;&quot;, gsub(&quot;\ ,&quot;,&quot;,&quot;,text)))
-      #Clear any trailing &quot; and&quot;
-      text=gsub(&quot; and$&quot;,&quot;&quot;,text)
-      #Clear any trailing comma
-      gsub(&quot;\ *,$&quot;,&quot;&quot;,text)
-    }  
-    makeNumber &lt;- function(...) as.numeric(paste(..., collapse=&quot;&quot;))     
-    #Disable scientific notation
-    opts &lt;- options(scipen=100) 
-    on.exit(options(opts)) 
-    ones &lt;- c(&quot;&quot;, &quot;one&quot;, &quot;two&quot;, &quot;three&quot;, &quot;four&quot;, &quot;five&quot;, &quot;six&quot;, &quot;seven&quot;,
-              &quot;eight&quot;, &quot;nine&quot;) 
-    names(ones) &lt;- 0:9 
-    teens &lt;- c(&quot;ten&quot;, &quot;eleven&quot;, &quot;twelve&quot;, &quot;thirteen&quot;, &quot;fourteen&quot;, &quot;fifteen&quot;,
-               &quot;sixteen&quot;, &quot; seventeen&quot;, &quot;eighteen&quot;, &quot;nineteen&quot;)
-    names(teens) &lt;- 0:9 
-    tens &lt;- c(&quot;twenty&quot;, &quot;thirty&quot;, &quot;forty&quot;, &quot;fifty&quot;, &quot;sixty&quot;, &quot;seventy&quot;, &quot;eighty&quot;,
-              &quot;ninety&quot;) 
-    names(tens) &lt;- 2:9 
-    x &lt;- round(x)
-    suffixes &lt;- c(&quot;thousand&quot;, &quot;million&quot;, &quot;billion&quot;, &quot;trillion&quot;)     
-    if (length(x) &gt; 1) return(trim(sapply(x, helper)))
-    helper(x)
-}
-q17_nlc_sum &lt;- function(n){
-  count_letters &lt;- function(number){
-    num_as_word &lt;- numbers2words(number)
-    letters &lt;- str_replace_all(num_as_word, &quot; |,&quot;, &quot;&quot;)
-    count &lt;- str_length(letters)
-  }
-  letter_counts &lt;- map_int(1:n, count_letters)
-  sum(letter_counts)
-}
-q17_nlc_sum(1000)</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxubnVtYmVyczJ3b3JkcyA8LSBmdW5jdGlvbih4KXtcbiAgICAjIyBGdW5jdGlvbiBieSBKb2huIEZveCBmb3VuZCBoZXJlOiBcbiAgICAjIyBodHRwOi8vdG9sc3RveS5uZXdjYXN0bGUuZWR1LmF1L1IvaGVscC8wNS8wNC8yNzE1Lmh0bWxcbiAgICAjIyBUd2Vha3MgYnkgQUpIIHRvIGFkZCBjb21tYXMgYW5kIFxcYW5kXFxcbiAgICBoZWxwZXIgPC0gZnVuY3Rpb24oeCl7XG4gICAgICBcbiAgICAgIGRpZ2l0cyA8LSByZXYoc3Ryc3BsaXQoYXMuY2hhcmFjdGVyKHgpLCBcXFxcKVtbMV1dKVxuICAgICAgbkRpZ2l0cyA8LSBsZW5ndGgoZGlnaXRzKVxuICAgICAgaWYgKG5EaWdpdHMgPT0gMSkgYXMudmVjdG9yKG9uZXNbZGlnaXRzXSlcbiAgICAgIGVsc2UgaWYgKG5EaWdpdHMgPT0gMilcbiAgICAgICAgaWYgKHggPD0gMTkpIGFzLnZlY3Rvcih0ZWVuc1tkaWdpdHNbMV1dKVxuICAgICAgZWxzZSB0cmltKHBhc3RlKHRlbnNbZGlnaXRzWzJdXSxcbiAgICAgICAgICAgICAgICAgICAgICBSZWNhbGwoYXMubnVtZXJpYyhkaWdpdHNbMV0pKSkpXG4gICAgICBlbHNlIGlmIChuRGlnaXRzID09IDMpIHRyaW0ocGFzdGUob25lc1tkaWdpdHNbM11dLCBcXGh1bmRyZWQgYW5kXFwsIFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFJlY2FsbChtYWtlTnVtYmVyKGRpZ2l0c1syOjFdKSkpKVxuICAgICAgZWxzZSB7XG4gICAgICAgIG5TdWZmaXggPC0gKChuRGlnaXRzICsgMikgJS8lIDMpIC0gMVxuICAgICAgICBpZiAoblN1ZmZpeCA+IGxlbmd0aChzdWZmaXhlcykpIHN0b3AocGFzdGUoeCwgXFxpcyB0b28gbGFyZ2UhXFwpKVxuICAgICAgICB0cmltKHBhc3RlKFJlY2FsbChtYWtlTnVtYmVyKGRpZ2l0c1tcbiAgICAgICAgICBuRGlnaXRzOigzKm5TdWZmaXggKyAxKV0pKSxcbiAgICAgICAgICBzdWZmaXhlc1tuU3VmZml4XSxcXFxuYGBgIn0= -->
+<p><code>r</code>r numbers2words &lt;- function(x){ ## Function by John Fox found here: ## <a href="http://tolstoy.newcastle.edu.au/R/help/05/04/2715.html" class="uri">http://tolstoy.newcastle.edu.au/R/help/05/04/2715.html</a> ## Tweaks by AJH to add commas and <br />
+helper &lt;- function(x){</p>
+<pre><code>  digits &lt;- rev(strsplit(as.character(x), \\)[[1]])
+  nDigits &lt;- length(digits)
+  if (nDigits == 1) as.vector(ones[digits])
+  else if (nDigits == 2)
+    if (x &lt;= 19) as.vector(teens[digits[1]])
+  else trim(paste(tens[digits[2]],
+                  Recall(as.numeric(digits[1]))))
+  else if (nDigits == 3) trim(paste(ones[digits[3]], \hundred and\, 
+                                    Recall(makeNumber(digits[2:1]))))
+  else {
+    nSuffix &lt;- ((nDigits + 2) %/% 3) - 1
+    if (nSuffix &gt; length(suffixes)) stop(paste(x, \is too large!\))
+    trim(paste(Recall(makeNumber(digits[
+      nDigits:(3*nSuffix + 1)])),
+      suffixes[nSuffix],\</code></pre>
+<p>```</p>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
@@ -687,6 +527,26 @@ q17_nlc_sum(1000)</code></pre>
 <p>NOTE: As there are only 16384 routes, it is possible to solve this problem by trying every route. However, Problem 67, is the same challenge with a triangle containing one-hundred rows; it cannot be solved by brute force, and requires a clever method! ;o)</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudCA8LSBsaXN0KFxuICA3NSxcbiAgYyg5NSwgNjQpLFxuICBjKDE3LCA3NywgNzIpLFxuICBjKDE4LCA4NSwgNTcsIDcwKSxcbiAgYygyMCwgMDQsIDQyLCAyNywgNzUpLFxuICBjKDE5LCA5MSwgMTMsIDM1LCA1MywgMzQpLFxuICBjKDg4LCA4MiwgMjcsIDczLCAzNywgNzMsIDM3KSxcbiAgYyg5OSwgOTUsIDU0LCA0OCwgODYsIDY2LCA2MCwgMDIpLFxuICBjKDQxLCAxMSwgMTYsIDY2LCA2MywgMzAsIDAwLCAwMCwgMDMpLFxuICBjKDQxLCAxOCwgODIsIDIzLCAzNywgNzIsIDI3LCA3NiwgNjQsIDQ5KSxcbiAgYyg1MywgMzEsIDE0LCA0NSwgNTUsIDUzLCAzMSwgMTIsIDI3LCA3MSwgMTQpLFxuICBjKDcwLCAwMSwgMTMsIDM4LCA4NywgNzMsIDM3LCA3OCwgODksIDk4LCA4NywgNzcpLFxuICBjKDkxLCAxMSwgMTIsIDI4LCA4NywgNzQsIDQxLCAxMywgMzgsIDgwLCAwNywgNzksIDk4KSxcbiAgYyg2MywgMzYsIDY0LCA0OCwgODksIDkzLCAzNywgNzAsIDAzLCAzNiwgNjksIDk3LCA3MCwgMDEpLFxuICBjKDA0LCA0MiwgMjgsIDg3LCA3MywgMzksIDkwLCAwOCwgODMsIDMzLCAzOCwgODMsIDMwLCAwNCwgNDMpXG4pXG5cblxuYGBgIn0= -->
+<pre class="r"><code>t &lt;- list(
+  75,
+  c(95, 64),
+  c(17, 77, 72),
+  c(18, 85, 57, 70),
+  c(20, 04, 42, 27, 75),
+  c(19, 91, 13, 35, 53, 34),
+  c(88, 82, 27, 73, 37, 73, 37),
+  c(99, 95, 54, 48, 86, 66, 60, 02),
+  c(41, 11, 16, 66, 63, 30, 00, 00, 03),
+  c(41, 18, 82, 23, 37, 72, 27, 76, 64, 49),
+  c(53, 31, 14, 45, 55, 53, 31, 12, 27, 71, 14),
+  c(70, 01, 13, 38, 87, 73, 37, 78, 89, 98, 87, 77),
+  c(91, 11, 12, 28, 87, 74, 41, 13, 38, 80, 07, 79, 98),
+  c(63, 36, 64, 48, 89, 93, 37, 70, 03, 36, 69, 97, 70, 01),
+  c(04, 42, 28, 87, 73, 39, 90, 08, 83, 33, 38, 83, 30, 04, 43)
+)
+</code></pre>
+<!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
