@@ -1,25 +1,3 @@
-# George ---------------------------------------------------------------
-
-.Rproj.user
-.Rhistory
-.RData
-.Ruserdata
-.ipynb_checkpoints/nigeria.hregr-checkpoint.ipynb
-.Rapp.history
-.ipynb_checkpoints/eastafrica_cropland-checkpoint.ipynb
-.ipynb_checkpoints/tanzania_cropland-checkpoint.ipynb
-.ipynb_checkpoints/tanzania.hregr-checkpoint.ipynb
-.ipynb_checkpoints/tanzania.seasons-checkpoint.ipynb
-.ipynb_checkpoints/tanzania.hregr.s1-checkpoint.ipynb
-.idea/workspace.xml
-.idea/vcs.xml
-.idea/misc.xml
-.idea/modules.xml
-.idea/vcs.xml
-.idea/smallholders_analysis.iml
-.idea/vcs.xml
-*.pyc
-
 # Python ---------------------------------------------------------------
 
 # Byte-compiled / optimized / DLL files
